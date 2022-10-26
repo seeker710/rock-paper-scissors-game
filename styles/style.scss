@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 40vh 60vh;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #192648;
+}
+
+.fixed-top {
+    align-self: center;
+    justify-self: center;
+    .score-board {
+        display: grid;
+        grid-template-columns: auto auto;
+        height: fit-content;
+        border: 3px solid #4f5c77;
+        border-radius: 15px;
+        padding: 1.2em;
+        width: 50vw;
+        .logo {
+            justify-self: flex-start;
+        }
+        .score-box {
+            background-color: #fdfdfd;
+            border-radius: 13px;
+            justify-self: flex-end;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            padding: 0 18%;
+            p {
+                color: #4668e8;
+                font-size: 100%;
+                font-weight: bold;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+            }
+            h1 {
+                color: #565469;
+                font-size: 350%;
+                font-weight: bolder;
+                margin: -0.1em 0;
+            }
+        }
+    }
+}
+
+.hands {
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    // display: none;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    background: url(../media/triangle.png) no-repeat;
+    background-position: center 75%;
+    background-size: 70%;
+    .hand {
+        text-align: center;
+        img {
+            height: auto;
+            width: 75%;
+        }
+        transition-duration: all 0.25s;
+        :hover {
+            cursor: pointer;
+            transform: translateY(-8px);
+        }
+    }
+    .rock {
+        grid-column: 1 / span 2;
+        img {
+            height: auto;
+            width: 37.5%;
+        }
+    }
+    
+}
+
+.contest {
+    justify-self: center;
+    align-self: center;
+    // display: grid;
+    display: none;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    align-content: center;
+    .selected-hand {
+        margin: 0 20px;
+        p {
+            color: #fdfdfd;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: x-large;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5em;
+        }
+        div {
+            text-align: center;
+            img {
+                height: auto;
+                width: 90%;
+            }
+        }
+    }
+    #play-again {
+        display: inline-block;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        margin: 0 2em;
+        p {
+            text-transform: uppercase;
+            color: #fdfdfd;
+            font-size: 200%;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        div {
+            background-color: #fdfdfd;
+            border-radius: 6px;
+            color: #192648;
+            font-weight: 600;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 12em;
+        }
+        :hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+body>h3 {
+    display: none;
+}
+
+@media only screen and (max-width: 650px) and (min-width: 350px) {
+    .fixed-top {
+        .score-board {
+            width: 70vw;
+            .logo {
+                img {
+                    height: auto;
+                    width: 80%;
+                }
+            }
+        }
+    }
+    .hands {
+        align-self: start;
+        background-position: center 95%;
+        background-size: 75%;
+    }
+    .contest {
+        align-self: start;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        .selected-hand {
+            justify-self: center;
+            height: auto;
+            width: 70%;
+        }
+        #player-hand {
+            order: 1;
+        }
+        #bot-hand {
+            order: 2;
+        }
+        #play-again {
+            order: 3;
+            grid-column: 1 / span 2;
+        }
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    body>h3 {
+        display: block;
+        background-color: #4668e8;
+        color: white;
+        height: 100vh;
+        text-align: center;
+    }
+    .wrapper {
+        display: none;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- This div is used to have fixed 40vh height -->
+        <div class="fixed-top"> 
+            <div class="score-board">
+                <div class="logo">
+                    <img src="./media/logo.svg" alt="title" class="responsive">
+                </div>
+                <div class="score-box">
+                    <p>score</p>
+                    <h1>0</h1>
+                </div>
+            </div>
+        </div>
+        <div class="hands">
+            <div class="hand paper" onclick="pickedHand('paper')">
+                <img src="./media/paper.png" alt="paper">
+            </div>
+            <div class="hand scissors" onclick="pickedHand('scissors')">
+                <img src="./media/scissors.png" alt="scissors">
+            </div>
+            <div class="hand rock" onclick="pickedHand('rock')">
+                <img src="./media/rock.png" alt="rock">
+            </div>
+        </div>
+        <div class="contest">
+            <div id="player-hand" class="selected-hand">
+                <p>YOU PICKED</p>
+                <div>
+                    <img src="" alt="your choice" class="responsive">
+                </div>
+            </div>
+            <div id="play-again" onclick="home()" onmouseover="colorChange(true)" onmouseleave="colorChange(false)">
+                <p></p>
+                <div>play again</div>
+            </div>
+            <div id="bot-hand" class="selected-hand">
+                <p>bot picked</p>
+                <div>
+                    <img src="./media/rock.png" alt="bot choice" class="responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Screen size not in range!!!</h3>
+    <script src="./script.js"></script>
+</body>
+</html>

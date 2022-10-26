@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40vh 60vh;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #192648;
+}
+
+.fixed-top {
+  align-self: center;
+  justify-self: center;
+}
+.fixed-top .score-board {
+  display: grid;
+  grid-template-columns: auto auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 3px solid #4f5c77;
+  border-radius: 15px;
+  padding: 1.2em;
+  width: 50vw;
+}
+.fixed-top .score-board .logo {
+  justify-self: flex-start;
+}
+.fixed-top .score-board .score-box {
+  background-color: #fdfdfd;
+  border-radius: 13px;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 18%;
+}
+.fixed-top .score-board .score-box p {
+  color: #4668e8;
+  font-size: 100%;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.fixed-top .score-board .score-box h1 {
+  color: #565469;
+  font-size: 350%;
+  font-weight: bolder;
+  margin: -0.1em 0;
+}
+
+.hands {
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  background: url(../media/triangle.png) no-repeat;
+  background-position: center 75%;
+  background-size: 70%;
+}
+.hands .hand {
+  text-align: center;
+  transition-duration: all 0.25s;
+}
+.hands .hand img {
+  height: auto;
+  width: 75%;
+}
+.hands .hand :hover {
+  cursor: pointer;
+  transform: translateY(-8px);
+}
+.hands .rock {
+  grid-column: 1/span 2;
+}
+.hands .rock img {
+  height: auto;
+  width: 37.5%;
+}
+
+.contest {
+  justify-self: center;
+  align-self: center;
+  display: none;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  align-content: center;
+}
+.contest .selected-hand {
+  margin: 0 20px;
+}
+.contest .selected-hand p {
+  color: #fdfdfd;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: x-large;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5em;
+}
+.contest .selected-hand div {
+  text-align: center;
+}
+.contest .selected-hand div img {
+  height: auto;
+  width: 90%;
+}
+.contest #play-again {
+  display: inline-block;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  margin: 0 2em;
+}
+.contest #play-again p {
+  text-transform: uppercase;
+  color: #fdfdfd;
+  font-size: 200%;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.contest #play-again div {
+  background-color: #fdfdfd;
+  border-radius: 6px;
+  color: #192648;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 12em;
+}
+.contest #play-again :hover {
+  cursor: pointer;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+body > h3 {
+  display: none;
+}
+
+@media only screen and (max-width: 650px) and (min-width: 350px) {
+  .fixed-top .score-board {
+    width: 70vw;
+  }
+  .fixed-top .score-board .logo img {
+    height: auto;
+    width: 80%;
+  }
+  .hands {
+    align-self: start;
+    background-position: center 95%;
+    background-size: 75%;
+  }
+  .contest {
+    align-self: start;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+  .contest .selected-hand {
+    justify-self: center;
+    height: auto;
+    width: 70%;
+  }
+  .contest #player-hand {
+    order: 1;
+  }
+  .contest #bot-hand {
+    order: 2;
+  }
+  .contest #play-again {
+    order: 3;
+    grid-column: 1/span 2;
+  }
+}
+@media only screen and (max-width: 349px) {
+  body > h3 {
+    display: block;
+    background-color: #4668e8;
+    color: white;
+    height: 100vh;
+    text-align: center;
+  }
+  .wrapper {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
